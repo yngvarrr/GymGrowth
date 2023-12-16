@@ -2,32 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View } from 'react-native';
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import { HomeScreen } from './src/screens/HomeScreen';
+import { FolderScreen } from './src/screens/FolderScreen';
+import { MuscScreen } from './src/screens/Treinos/MuscScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="GymGrowth" component={HomeScreen} />
+        <Tab.Screen name="Central de Treinos" component={FolderScreen} />
       </Tab.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Musculação" component={MuscScreen}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
