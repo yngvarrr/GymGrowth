@@ -5,7 +5,7 @@ export const MuscScreen = () => {
   return (
     <SafeAreaView>
         <Text>
-            
+          Musculação
         </Text>
         <View>
 
@@ -13,3 +13,7 @@ export const MuscScreen = () => {
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  
+})

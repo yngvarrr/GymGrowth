@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import Button from "../components/Button";
 
-export const FolderScreen = ( navigation ) => {
+export const FolderScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.head}>Escolha o tipo de treino:</Text>
