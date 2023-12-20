@@ -10,10 +10,14 @@ export const MuscScreen = ({navigation}) => {
         <Text>
           Musculação
         </Text>
+        <View>
+          <Text>Meus Treinos</Text>
+        </View>
         <View style={styles.buttons}>
           <Button label="Superiores" onPress={() => navigation.navigate("Superiores")}/>
           <Button label="Inferiores" />
         </View>
+        <Button label="Novo Treino" />
         <CargaModal />
     </SafeAreaView>
   )
@@ -25,6 +29,6 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-evenly'
   },
 })
