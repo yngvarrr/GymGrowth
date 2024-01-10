@@ -8,9 +8,9 @@ export const FolderScreen = ({ navigation }) => {
       <Text style={styles.head}>Escolha o tipo de treino:</Text>
       <View style={styles.buttonContainer}>
         <Button label="Musculação" onPress={() => navigation.navigate("Musculação")} />
-        <Button label="Calistenia" />
+        {/*<Button label="Calistenia" />
         <Button label="Crossfit" />
-        <Button label="Cardio" />
+  <Button label="Cardio" />*/}
       </View>
     </SafeAreaView>
   );
