@@ -8,6 +8,7 @@ import { supabase } from "./createClient";
 export const SuperioresScreen = () => {
   const [users, setUsers] = useState([]);
   console.log(users);
+
   async function fetchUsers() {
     const { data } = supabase.from("users").select("*");
     setUsers(data);
