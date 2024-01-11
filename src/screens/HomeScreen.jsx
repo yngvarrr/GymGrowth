@@ -20,29 +20,7 @@ import { WorkoutItem } from "../components/WorkoutItem";
 
 export const HomeScreen = () => {
   const [greet, setGreet] = useState("Olá");
-  const [treino, setTreino] = useState("");
-  const [carga, setCarga] = useState("");
-  const [grupo, setGrupo] = useState("");
-  const [tipo, setTipo] = useState("");
   const [workoutList, setWorkoutList] = useState([]);
-
-  const addTreino = async () => {
-    try {
-      const docRef = await addDoc(collection(db, "treinos"), {
-        nome: treino,
-        tipo: tipo,
-        grupo: grupo,
-        carga: carga,
-      });
-      console.log("Document written with ID: ", docRef.id);
-      setTreino("");
-      setCarga("");
-      setGrupo("");
-      setTipo("");
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  };
 
   const getWorkouts = async () => {
     const querySnapshot = await getDocs(collection(db, "treinos"));
@@ -77,33 +55,6 @@ export const HomeScreen = () => {
         renderItem={({ item }) => <WorkoutItem nome={item.nome} />}
         keyExtractor={(item) => item.id}
       />
-      <View>
-        <TextInput
-          style={styles.input}
-          value={treino}
-          onChangeText={(text) => setTreino(text)}
-          onSubmitEditing={addTreino}
-        />
-        <TextInput
-          style={styles.input}
-          value={grupo}
-          onChangeText={(text) => setGrupo(text)}
-          onSubmitEditing={addTreino}
-        />
-        <TextInput
-          style={styles.input}
-          value={tipo}
-          onChangeText={(text) => setTipo(text)}
-          onSubmitEditing={addTreino}
-        />
-        <TextInput
-          style={styles.input}
-          value={carga}
-          onChangeText={(text) => setCarga(text)}
-          onSubmitEditing={addTreino}
-          keyboardType="numeric"
-        />
-      </View>
     </SafeAreaView>
   );
 };
