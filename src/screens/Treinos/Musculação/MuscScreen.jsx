@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import Button from "../../../components/Button";
-import { CargaModal } from "../../../components/CargaModal";
 
 export const MuscScreen = ({ navigation }) => {
 
@@ -11,8 +10,7 @@ export const MuscScreen = ({ navigation }) => {
       <View>
         <Text>Meus Treinos</Text>
       </View>
-      <Button label="Novo Treino" onPress={() => navigation.navigate("Adicionar Exercício")} />
-      <CargaModal />
+      <Button label="Adicionar novo exercício" onPress={() => navigation.navigate("Adicionar Exercício")} />
     </SafeAreaView>
   );
 };
