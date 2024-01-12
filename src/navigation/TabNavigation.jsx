@@ -11,9 +11,18 @@ const Tab = createBottomTabNavigator();
 
 export const TabNavigation = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{
+      tabBarShowLabel: false,
+      tabBarStyle: {
+          backgroundColor: `#f5f5f5`,
+          borderColor: `#d3d3d3`,
+      },
+      tabBarActiveTintColor: '#D17E46',
+      tabBarInactiveTintColor: '#004C5C',
+      tabBarHideOnKeyboard: true,
+  }} >
       <Tab.Screen
-        name="Home"
+        name="GymGrowth"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (

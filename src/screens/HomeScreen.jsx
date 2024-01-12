@@ -29,7 +29,7 @@ export const HomeScreen = () => {
       setWorkoutList({
         ...doc.data(),
         id: doc.id,
-      });
+      })
     });
   };
 
@@ -50,11 +50,8 @@ export const HomeScreen = () => {
       <View>
         <Text style={styles.head}>{`${greet} Usuário! `}</Text>
       </View>
-      <FlatList
-        data={workoutList}
-        renderItem={({ item }) => <WorkoutItem nome={item.nome} />}
-        keyExtractor={(item) => item.id}
-      />
+      <WorkoutItem />
+      <FlatList data={workoutList} renderItem={({item}) => console.log(item.data)} keyExtractor={(item) => item.id} />
     </SafeAreaView>
   );
 };

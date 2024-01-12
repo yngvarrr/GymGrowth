@@ -12,7 +12,8 @@ import {
 export const WorkoutItem = (props) => {
   return (  
     <View style={styles.container}>
-        <Text>{props.nome}</Text>
+        <Text>Treino</Text>
+        <Text>{props.treino}</Text>
     </View>
   )
 }
