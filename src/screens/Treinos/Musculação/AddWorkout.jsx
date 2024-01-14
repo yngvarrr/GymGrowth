@@ -134,13 +134,6 @@ export const AddWorkout = () => {
             data={data}
             save="value"
           />
-          {/*<TextInput
-            placeholder="Qual músculo trabalha?"
-            style={styles.input}
-            value={grupo}
-            onChangeText={(text) => setGrupo(text)}
-            onSubmitEditing={addTreino}
-  /> */}
         </View>
         <View style={styles.membrosContainer}>
           <Text style={styles.inputHead}>Membros:</Text>
@@ -152,14 +145,6 @@ export const AddWorkout = () => {
             <Checkbox value={superiores} onValueChange={setSuperiores} />
             <Text style={styles.membrosText}>Superiores</Text>
           </View>
-
-          {/*<TextInput
-            placeholder="Superiores ou inferiores?"
-            style={styles.input}
-            value={tipo}
-            onChangeText={(text) => setTipo(text)}
-            onSubmitEditing={addTreino}
-/> */}
         </View>
         <View style={styles.confirmContainer}>
           <View style={styles.checkboxContainer}>
